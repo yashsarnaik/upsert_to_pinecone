@@ -5,9 +5,15 @@ This Streamlit app allows you to easily upload PDFs, vectorize their contents, a
 
 1.PDF Vectorization: Automatically vectorizes the content of uploaded PDFs using the integrated vectorization pipeline.
 
-2.Pinecone DB Index Management: The app can check if the specified Pinecone index exists. If not, it will create a new one; otherwise, it will upsert the vectorized data to the existing index.
+2.Pinecone DB Index Management: The app can check if the specified Pinecone index exists. If not, it will create a new one otherwise, it will upsert the vectorized data to the existing index.
 
 3.Streamlined Workflow: A simple and user-friendly Streamlit interface makes the process of managing Pinecone DB and vectorizing PDFs seamless.
+
+##Things to Consider
+
+1.You will need your own Google credentials json which you will get from Google Cloud Console.
+
+2.You will need your Pinecone API key
 
 
 ## Authors
