@@ -16,6 +16,11 @@ import json
 from PyPDF2 import PdfReader
 from langchain.schema import Document
 
+def main():
+    st.set_page_config(
+         page_title="Upsert to Pinecone",
+         page_icon="📤")
+    
 def load_css(file_path):
     with open(file_path, "r") as f:
         return f"<style>{f.read()}</style>"
@@ -27,8 +32,10 @@ st.markdown(css, unsafe_allow_html=True)
 # Load environment variables
 load_dotenv()
 
+st.title('Upsert to Pinecone📤')
+
 # File uploader for Google Credentials
-credential_path = st.file_uploader("Choose a Google Credentials JSON file", type="json")
+credential_path = st.file_uploader("Choose a Google Credentials JSON file🗄️", type="json")
 
 if credential_path is not None:
     credentials = json.load(credential_path)
@@ -41,7 +48,7 @@ if credential_path is not None:
     st.success("Google Credentials uploaded and environment variable set successfully!")
 
 # PDF file uploader
-uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+uploaded_file = st.file_uploader("Choose a PDF file📁", type="pdf")
 
 def extract_text_from_pdf(pdf_file):
     pdf_reader = PdfReader(pdf_file)
@@ -82,8 +89,8 @@ def get_vectorstore(text_chunks, index_name):
     return vectorstore
 
 # Pinecone setup
-key = st.text_input("Enter your Pinecone API key", type="password")
-index_name = st.text_input("Enter your Pinecone Index Name")
+key = st.text_input("Enter your Pinecone API key🔑", type="password")
+index_name = st.text_input("Enter your Pinecone Index Name📛")
 
 if key and index_name:
     # Set the Pinecone API key as an environment variable
@@ -131,9 +138,12 @@ else:
 if os.path.exists("temp_credentials.json"):
     os.remove("temp_credentials.json")
 
-st.markdown("""
-1. Download the Default credentials JSON file from Google Cloud Console
-2. Upload the PDF file you want to vectorize and upload to the Pinecone Database
-3. Enter your Pinecone API key
-4. Enter your Pinecone Index name
+footer=("""
+1. Download the Default credentials JSON file from Google Cloud Console.
+2. Upload the PDF file you want to vectorize and upload to the Pinecone Database.
+3. Enter your Pinecone API key.
+4. Enter your Pinecone Index name.
+5. Selected environment by default is <h3> us-east-1 </h3> if you want a different one make changes in app.py.             
 """)    
+
+st.markdown(footer,unsafe_allow_html=True)
