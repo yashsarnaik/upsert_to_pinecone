@@ -9,7 +9,7 @@ This Streamlit app allows you to easily upload PDFs, vectorize their contents, a
 
 3.Streamlined Workflow: A simple and user-friendly Streamlit interface makes the process of managing Pinecone DB and vectorizing PDFs seamless.
 
-##Things to Consider
+## Things to Consider
 
 1.You will need your own Google credentials json which you will get from Google Cloud Console.
 
