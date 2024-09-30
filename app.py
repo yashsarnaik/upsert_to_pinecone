@@ -31,7 +31,7 @@ st.markdown(css, unsafe_allow_html=True)
 # Load environment variables
 load_dotenv()
 
-st.title('Upsert to Pinecone using GoogleAIEmbeddings📤')
+st.title('Upsert to Pinecone using \r GoogleAI\rEmbeddings📤')
 
 # File uploader for Google Credentials
 credential_path = st.file_uploader("Choose a Google Credentials JSON file🗄️", type="json")
