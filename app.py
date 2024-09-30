@@ -16,11 +16,10 @@ import json
 from PyPDF2 import PdfReader
 from langchain.schema import Document
 
-def main():
-    st.set_page_config(
-         page_title="Upsert to Pinecone",
-         page_icon="📤")
-    
+st.set_page_config(
+    page_title="Upsert to Pinecone",
+    page_icon="📤")
+
 def load_css(file_path):
     with open(file_path, "r") as f:
         return f"<style>{f.read()}</style>"
