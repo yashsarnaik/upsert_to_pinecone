@@ -1,5 +1,5 @@
 
-# Upsert to Pinecone
+# Upsert to Pinecone using GoogleAIEmbeddings
 
 This Streamlit app allows you to easily upload PDFs, vectorize their contents, and store the resulting embeddings in a Pinecone database. It includes the following key features:
 
